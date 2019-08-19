@@ -12,10 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class JenkinsApplicationTests {
 
-	@SuppressWarnings("null")
 	@Test
 	public void testAdd() {
-		Sum s=null;
+		Sum s= new Sum();
 		assertEquals(15, s.add(10, 5));
 		
 	}
