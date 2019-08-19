@@ -1,10 +1,19 @@
-pipeline { 
-    agent any  
-    stages { 
-        stage('Build') { 
-            steps { 
-               echo 'This is a minimal pipeline.' 
+pipeline {
+agent any
+stages {  	  
+  stage ('Compile') {
+      steps {
+                withMaven(maven : 'maven_3_6_1') {
+                    sh 'mvn clean compile'
+                }
             }
         }
-    }
+     stage ('Testing Stage') {
+            steps {
+                withMaven(maven : 'maven_3_6_1') {
+                    sh 'mvn test'
+                }
+            }
+        }
+  }
 }
