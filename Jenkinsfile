@@ -1,14 +1,10 @@
-pipeline {
-	agent any
-	
-	stages {
-		stage('Compile Stage') {
-			
-			
-			withMaven(maven : '3.6.1'){
-			                    
-			                }
-
-		}
-	} 
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build') { 
+            steps { 
+               echo 'This is a minimal pipeline.' 
+            }
+        }
+    }
 }
